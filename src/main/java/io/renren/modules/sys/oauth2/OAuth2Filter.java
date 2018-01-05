@@ -3,10 +3,10 @@ package io.renren.modules.sys.oauth2;
 import com.google.gson.Gson;
 import io.renren.common.utils.R;
 import org.apache.commons.lang.StringUtils;
-import org.apache.http.HttpStatus;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
+import org.springframework.http.HttpStatus;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -46,7 +46,7 @@ public class OAuth2Filter extends AuthenticatingFilter {
         String token = getRequestToken((HttpServletRequest) request);
         if(StringUtils.isBlank(token)){
             HttpServletResponse httpResponse = (HttpServletResponse) response;
-            String json = new Gson().toJson(R.error(HttpStatus.SC_UNAUTHORIZED, "invalid token"));
+            String json = new Gson().toJson(R.error(HttpStatus.UNAUTHORIZED.value(), "invalid token"));
             httpResponse.getWriter().print(json);
 
             return false;
@@ -62,7 +62,7 @@ public class OAuth2Filter extends AuthenticatingFilter {
         try {
             //处理登录失败的异常
             Throwable throwable = e.getCause() == null ? e : e.getCause();
-            R r = R.error(HttpStatus.SC_UNAUTHORIZED, throwable.getMessage());
+            R r = R.error(HttpStatus.UNAUTHORIZED.value(), throwable.getMessage());
 
             String json = new Gson().toJson(r);
             httpResponse.getWriter().print(json);

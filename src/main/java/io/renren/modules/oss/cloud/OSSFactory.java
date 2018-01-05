@@ -1,9 +1,9 @@
 package io.renren.modules.oss.cloud;
 
-import io.renren.modules.sys.service.SysConfigService;
 import io.renren.common.utils.ConfigConstant;
 import io.renren.common.utils.Constant;
 import io.renren.common.utils.SpringContextUtils;
+import io.renren.modules.sys.service.SysConfigService;
 
 /**
  * 文件上传Factory
@@ -24,10 +24,6 @@ public final class OSSFactory {
 
         if(config.getType() == Constant.CloudService.QINIU.getValue()){
             return new QiniuCloudStorageService(config);
-        }else if(config.getType() == Constant.CloudService.ALIYUN.getValue()){
-            return new AliyunCloudStorageService(config);
-        }else if(config.getType() == Constant.CloudService.QCLOUD.getValue()){
-            return new QcloudCloudStorageService(config);
         }
 
         return null;
