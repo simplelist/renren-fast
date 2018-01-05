@@ -1,5 +1,5 @@
 **项目说明** 
-- renren-fast是一个轻量级的Java快速开发平台，能快速开发项目并交付【接私活利器】
+- renren-fast是一个轻量级的Java快速开发平台，能快速开发项目并交付
 <br> 
  
 
@@ -11,10 +11,8 @@
 - 页面交互使用Vue2.x，极大的提高了开发效率
 - 完善的代码生成机制，可在线生成entity、xml、dao、service、html、js、sql代码，减少70%以上的开发任务
 - 引入quartz定时任务，可动态完成任务的添加、修改、删除、暂停、恢复及日志查看等功能
-- 引入API模板，根据token作为登录令牌，极大的方便了APP接口开发
 - 引入Hibernate Validator校验框架，轻松实现后端校验
-- 引入云存储服务，已支持：七牛云、阿里云、腾讯云等
-- 引入swagger文档支持，方便编写API接口文档
+- 引入云存储服务，已支持：七牛云
 - 引入路由机制，刷新页面会停留在当前页
 <br> 
 
@@ -32,7 +30,7 @@ renren-fast
 ├─config 配置信息
 │ 
 ├─modules 功能模块
-│  ├─api API接口模块(APP调用)
+
 │  ├─job 定时任务模块
 │  ├─oss 文件服务模块
 │  └─sys 权限模块
@@ -47,14 +45,6 @@ renren-fast
 ```
 <br> 
 
-**如何交流、反馈、参与贡献？** 
-- 开发文档：http://www.renren.io/open/renren-fast/
-- Git仓库：http://git.oschina.net/babaio/renren-fast
-- 其他项目：http://www.renren.io/open/
-- [编程入门教程](http://www.renren.io)：http://www.renren.io   
-- 官方QQ群：324780204、145799952
-- 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
-<br> 
 
 
 **技术选型：** 
@@ -77,24 +67,3 @@ renren-fast
 - Eclipse、IDEA运行RenrenApplication.java，则可启动项目
 - 项目访问路径：http://localhost:8080/renren-fast
 - 账号密码：admin/admin
-- Swagger路径：http://localhost:8080/renren-fast/swagger/index.html
-
-
- **项目演示**
-- 演示地址：http://demo.open.renren.io/renren-fast
-- 账号密码：admin/admin
-<br> 
-
-**接口文档效果图：**
-![输入图片说明](http://cdn.renren.io/img/6e8d7575fb8240d49b949dc0f02547bc "在这里输入图片标题")
-<br> <br> <br> 
-
-**演示效果图：**
-![输入图片说明](http://cdn.renren.io/img/4f15a5513e4e4a00a07294e87c548982 "在这里输入图片标题")
-![输入图片说明](http://cdn.renren.io/img/9b0c60dfe7ee48fb87bb933e31ebf36f "在这里输入图片标题")
-![输入图片说明](http://cdn.renren.io/img/f59b6f61c36f49e1851a5bf3e91a1e5b "在这里输入图片标题")
-![输入图片说明](http://cdn.renren.io/img/c3fe6c2146dc450f95b5b85d0ad0325f "在这里输入图片标题")
-![输入图片说明](http://cdn.renren.io/img/069045e6c6d24d88b6c2827a1b625da4 "在这里输入图片标题")
-![输入图片说明](http://cdn.renren.io/img/5d4d6c1acd5c4455930dc5dc7d88ad82 "在这里输入图片标题")
-![输入图片说明](http://cdn.renren.io/img/35dfe497ea7642028c7d6115a5a1c5e8 "在这里输入图片标题")
-
