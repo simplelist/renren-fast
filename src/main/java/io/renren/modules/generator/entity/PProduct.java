@@ -48,11 +48,11 @@ public class PProduct implements Serializable {
     //备注
     private String remark;
     //
-    private String createUser;
+    private Integer createUser;
     //
     private Date createDate;
     //
-    private String updateUser;
+    private Integer updateUser;
     //
     private Date updateDate;
 
@@ -283,14 +283,14 @@ public class PProduct implements Serializable {
     /**
      * 设置：
      */
-    public void setCreateUser(String createUser) {
+    public void setCreateUser(Integer createUser) {
         this.createUser = createUser;
     }
 
     /**
      * 获取：
      */
-    public String getCreateUser() {
+    public Integer getCreateUser() {
         return createUser;
     }
 
@@ -311,14 +311,14 @@ public class PProduct implements Serializable {
     /**
      * 设置：
      */
-    public void setUpdateUser(String updateUser) {
+    public void setUpdateUser(Integer updateUser) {
         this.updateUser = updateUser;
     }
 
     /**
      * 获取：
      */
-    public String getUpdateUser() {
+    public Integer getUpdateUser() {
         return updateUser;
     }
 

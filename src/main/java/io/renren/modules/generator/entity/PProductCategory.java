@@ -29,11 +29,11 @@ public class PProductCategory implements Serializable {
     //备注
     private String remark;
     //
-    private String createUser;
+    private Integer createUser;
     //
     private Date createDate;
     //
-    private String updateUser;
+    private Integer updateUser;
     //
     private Date updateDate;
 
@@ -135,19 +135,6 @@ public class PProductCategory implements Serializable {
         return remark;
     }
 
-    /**
-     * 设置：
-     */
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
-    }
-
-    /**
-     * 获取：
-     */
-    public String getCreateUser() {
-        return createUser;
-    }
 
     /**
      * 设置：
@@ -163,19 +150,6 @@ public class PProductCategory implements Serializable {
         return createDate;
     }
 
-    /**
-     * 设置：
-     */
-    public void setUpdateUser(String updateUser) {
-        this.updateUser = updateUser;
-    }
-
-    /**
-     * 获取：
-     */
-    public String getUpdateUser() {
-        return updateUser;
-    }
 
     /**
      * 设置：
@@ -189,5 +163,21 @@ public class PProductCategory implements Serializable {
      */
     public Date getUpdateDate() {
         return updateDate;
+    }
+
+    public Integer getCreateUser() {
+        return createUser;
+    }
+
+    public void setCreateUser(Integer createUser) {
+        this.createUser = createUser;
+    }
+
+    public Integer getUpdateUser() {
+        return updateUser;
+    }
+
+    public void setUpdateUser(Integer updateUser) {
+        this.updateUser = updateUser;
     }
 }

@@ -23,16 +23,16 @@ public class SysConfigRedis {
             return ;
         }
         String key = RedisKeys.getSysConfigKey(config.getKey());
-        redisUtils.set(key, config);
+        redisUtils.put(key, config);
     }
 
     public void delete(String configKey) {
         String key = RedisKeys.getSysConfigKey(configKey);
-        redisUtils.delete(key);
+        redisUtils.remove(key);
     }
 
     public SysConfigEntity get(String configKey){
         String key = RedisKeys.getSysConfigKey(configKey);
-        return redisUtils.get(key, SysConfigEntity.class);
+        return (SysConfigEntity) redisUtils.get(key);
     }
 }

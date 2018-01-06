@@ -44,21 +44,26 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label">编码</div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProductCategory.code" placeholder="编码"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label">层级 1：一级 2：级</div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProductCategory.leaf" placeholder="层级 1：一级 2：级 "/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label">父id</div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProductCategory.parentId" placeholder="父id"/>
+                <div class="col-sm-2 control-label">一级分类</div>
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">主题
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">Java</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="form-group">
@@ -75,25 +80,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
+                <div class="col-sm-2 control-label">创建者</div>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" v-model="pProductCategory.createUser" placeholder=""/>
                 </div>
             </div>
+
             <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProductCategory.createDate" placeholder=""/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProductCategory.updateUser" placeholder=""/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
+                <div class="col-sm-2 control-label">更新时间</div>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" v-model="pProductCategory.updateDate" placeholder=""/>
                 </div>

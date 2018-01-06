@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -24,7 +25,16 @@ public class PProductCategoryController {
     @Autowired
     private PProductCategoryService pProductCategoryService;
 
+    /**
+     * 获取一级分类
+     */
+    @GetMapping("first_catetory")
+    @RequiresPermissions("generator:pproductcategory:list")
+    public R allFirstCategory() {
+        List<PProductCategory> page = pProductCategoryService.selectAllFirstCategory();
 
+        return R.ok().put("page", page);
+    }
     /**
      * 列表
      */

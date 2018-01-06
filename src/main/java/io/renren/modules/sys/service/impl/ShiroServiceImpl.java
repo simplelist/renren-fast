@@ -3,7 +3,6 @@ package io.renren.modules.sys.service.impl;
 import io.renren.common.utils.Constant;
 import io.renren.modules.sys.dao.SysMenuDao;
 import io.renren.modules.sys.dao.SysUserDao;
-import io.renren.modules.sys.dao.SysUserTokenDao;
 import io.renren.modules.sys.entity.SysMenuEntity;
 import io.renren.modules.sys.entity.SysUserEntity;
 import io.renren.modules.sys.entity.SysUserTokenEntity;
@@ -21,7 +20,7 @@ public class ShiroServiceImpl implements ShiroService {
     @Autowired
     private SysUserDao sysUserDao;
     @Autowired
-    private SysUserTokenDao sysUserTokenDao;
+    private RedisService redisService;
 
     @Override
     public Set<String> getUserPermissions(long userId) {
@@ -50,7 +49,7 @@ public class ShiroServiceImpl implements ShiroService {
 
     @Override
     public SysUserTokenEntity queryByToken(String token) {
-        return sysUserTokenDao.queryByToken(token);
+        return redisService.queryByToken(token);
     }
 
     @Override

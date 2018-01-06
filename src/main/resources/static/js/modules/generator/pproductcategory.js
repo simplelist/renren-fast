@@ -5,9 +5,7 @@ $(function () {
         colModel: [
             {label: 'id', name: 'id', index: 'id', width: 50, key: true},
             {label: '名称', name: 'name', index: 'name', width: 80},
-            {label: '编码', name: 'code', index: 'code', width: 80},
-            {label: '层级 1：一级 2：级 ', name: 'leaf', index: 'leaf', width: 80},
-            {label: '父id', name: 'parentId', index: 'parent_id', width: 80},
+            {label: '一级分类', name: 'parentId', index: 'parent_id', width: 80},
             {label: '是否启用：1启用，0禁用', name: 'status', index: 'status', width: 80},
             {label: '备注', name: 'remark', index: 'remark', width: 80},
             {label: '', name: 'createUser', index: 'create_user', width: 80},
