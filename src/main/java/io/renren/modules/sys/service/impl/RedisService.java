@@ -27,4 +27,5 @@ public class RedisService {
             return sysUserTokenEntity;
         }
     }
+
 }

@@ -5,13 +5,10 @@ $(function () {
         colModel: [
             {label: 'id', name: 'id', index: 'id', width: 50, key: true},
             {label: '名称', name: 'name', index: 'name', width: 80},
-            {label: '一级分类', name: 'parentId', index: 'parent_id', width: 80},
+            {label: '一级分类名字', name: 'parentName', index: 'parent_name', width: 80},
             {label: '是否启用：1启用，0禁用', name: 'status', index: 'status', width: 80},
             {label: '备注', name: 'remark', index: 'remark', width: 80},
-            {label: '', name: 'createUser', index: 'create_user', width: 80},
-            {label: '', name: 'createDate', index: 'create_date', width: 80},
-            {label: '', name: 'updateUser', index: 'update_user', width: 80},
-            {label: '', name: 'updateDate', index: 'update_date', width: 80}
+            {label: '更新时间', name: 'updateDate', index: 'update_date', width: 80}
         ],
         viewrecords: true,
         height: 385,

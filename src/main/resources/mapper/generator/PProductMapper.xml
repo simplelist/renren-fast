@@ -27,23 +27,4 @@
         <result property="updateDate" column="update_date"/>
     </resultMap>
 
-    <select id="queryList" resultType="io.renren.modules.generator.entity.PProduct">
-        select * from p_product
-        <choose>
-            <when test="sidx != null and sidx.trim() != ''">
-                order by ${sidx} ${order}
-            </when>
-            <otherwise>
-                order by id desc
-            </otherwise>
-        </choose>
-        <if test="offset != null and limit != null">
-            limit #{offset}, #{limit}
-        </if>
-    </select>
-
-    <select id="queryTotal" resultType="int">
-		select count(*) from p_product 
-	</select>
-
 </mapper>

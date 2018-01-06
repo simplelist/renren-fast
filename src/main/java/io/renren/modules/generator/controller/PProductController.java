@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import io.renren.common.utils.R;
 import io.renren.modules.generator.entity.PProduct;
 import io.renren.modules.generator.service.PProductService;
+import io.renren.modules.sys.controller.AbstractController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ import java.util.Arrays;
  */
 @RestController
 @RequestMapping("/generator/pproduct")
-public class PProductController {
+public class PProductController extends AbstractController {
     @Autowired
     private PProductService pProductService;
 

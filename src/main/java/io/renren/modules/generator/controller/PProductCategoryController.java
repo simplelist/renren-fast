@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import io.renren.common.utils.R;
 import io.renren.modules.generator.entity.PProductCategory;
 import io.renren.modules.generator.service.PProductCategoryService;
+import io.renren.modules.sys.controller.AbstractController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,14 +22,14 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/generator/pproductcategory")
-public class PProductCategoryController {
+public class PProductCategoryController extends AbstractController {
     @Autowired
     private PProductCategoryService pProductCategoryService;
 
     /**
      * 获取一级分类
      */
-    @GetMapping("first_catetory")
+    @GetMapping("first_category")
     @RequiresPermissions("generator:pproductcategory:list")
     public R allFirstCategory() {
         List<PProductCategory> page = pProductCategoryService.selectAllFirstCategory();
