@@ -5,23 +5,15 @@ $(function () {
         colModel: [
             {label: 'id', name: 'id', index: 'id', width: 50, key: true},
             {label: '名称', name: 'name', index: 'name', width: 80},
-            {label: '编码', name: 'code', index: 'code', width: 80},
             {label: '进价', name: 'purchasePrice', index: 'purchase_price', width: 80},
             {label: '销售价', name: 'salePrice', index: 'sale_price', width: 80},
-            {label: '差价', name: 'differencePrice', index: 'difference_price', width: 80},
             {label: '商品数量', name: 'productNum', index: 'product_num', width: 80},
             {label: '商品库存', name: 'stock', index: 'stock', width: 80},
             {label: '商品单位', name: 'unit', index: 'unit', width: 80},
-            {label: '大图片地址', name: 'photoMaxUrl', index: 'photo_max_url', width: 80},
             {label: '所属分类', name: 'categoryCode', index: 'category_code', width: 80},
-            {label: '所属商户', name: 'shopCode', index: 'shop_code', width: 80},
-            {label: '商品描述', name: 'describe', index: 'describe', width: 80},
             {label: '是否启用：1启用，0禁用', name: 'status', index: 'status', width: 80},
-            {label: '内容', name: 'content', index: 'content', width: 80},
             {label: '备注', name: 'remark', index: 'remark', width: 80},
             {label: '', name: 'createUser', index: 'create_user', width: 80},
-            {label: '', name: 'createDate', index: 'create_date', width: 80},
-            {label: '', name: 'updateUser', index: 'update_user', width: 80},
             {label: '', name: 'updateDate', index: 'update_date', width: 80}
         ],
         viewrecords: true,
@@ -78,7 +70,7 @@ var vm = new Vue({
             vm.getInfo(id)
         },
         saveOrUpdate: function (event) {
-            var methodName = vm.pProductCategory.id == null ? "POST" : "PUT";
+            var methodName = vm.pProduct.id == null ? "POST" : "PUT";
             $.ajax({
                 type: methodName,
                 url: baseURL + "generator/pproduct",

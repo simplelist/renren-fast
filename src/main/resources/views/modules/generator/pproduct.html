@@ -44,12 +44,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label">编码</div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.code" placeholder="编码"/>
-                </div>
-            </div>
-            <div class="form-group">
                 <div class="col-sm-2 control-label">进价</div>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" v-model="pProduct.purchasePrice" placeholder="进价"/>
@@ -59,12 +53,6 @@
                 <div class="col-sm-2 control-label">销售价</div>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" v-model="pProduct.salePrice" placeholder="销售价"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label">差价</div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.differencePrice" placeholder="差价"/>
                 </div>
             </div>
             <div class="form-group">
@@ -98,12 +86,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label">所属商户</div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.shopCode" placeholder="所属商户"/>
-                </div>
-            </div>
-            <div class="form-group">
                 <div class="col-sm-2 control-label">商品描述</div>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" v-model="pProduct.describe" placeholder="商品描述"/>
@@ -128,28 +110,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.createUser" placeholder=""/>
-                </div>
+                <div class="col-sm-2 control-label">创建者</div>
+                <h4><span class="label label-info">{{pProduct.createUser}}</span></h4>
             </div>
             <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.createDate" placeholder=""/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.updateUser" placeholder=""/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2 control-label"></div>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="pProduct.updateDate" placeholder=""/>
-                </div>
+                <div class="col-sm-2 control-label">更新时间</div>
+                <h4><span class="label label-info">{{pProduct.updateDate}}</span></h4>
             </div>
             <div class="form-group">
                 <div class="col-sm-2 control-label"></div>

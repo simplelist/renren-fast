@@ -27,7 +27,7 @@ public class PProductController extends AbstractController {
     /**
      * 列表
      */
-    @GetMapping("/list")
+    @GetMapping
     @RequiresPermissions("generator:pproduct:list")
     public R list(Page pageable) {
         Page<PProduct> page = pProductService.selectPage(pageable);
@@ -49,7 +49,7 @@ public class PProductController extends AbstractController {
     /**
      * 保存
      */
-    @PostMapping("/save")
+    @PostMapping
     @RequiresPermissions("generator:pproduct:save")
     public R save(@RequestBody PProduct pProduct) {
         pProductService.insert(pProduct);
@@ -59,7 +59,7 @@ public class PProductController extends AbstractController {
     /**
      * 修改
      */
-    @PutMapping("/update")
+    @PutMapping
     @RequiresPermissions("generator:pproduct:update")
     public R update(@RequestBody PProduct pProduct) {
         pProductService.updateById(pProduct);
@@ -69,7 +69,7 @@ public class PProductController extends AbstractController {
     /**
      * 删除
      */
-    @DeleteMapping("/delete")
+    @DeleteMapping
     @RequiresPermissions("generator:pproduct:delete")
     public R delete(@RequestBody Integer[] ids) {
         pProductService.deleteBatchIds(Arrays.asList(ids));
