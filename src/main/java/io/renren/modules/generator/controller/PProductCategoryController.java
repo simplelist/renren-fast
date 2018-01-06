@@ -24,29 +24,12 @@ public class PProductCategoryController {
     @Autowired
     private PProductCategoryService pProductCategoryService;
 
-//	/**
-//	 * 列表
-//	 */
-//	@RequestMapping("/list")
-//	@RequiresPermissions("generator:pproduct:list")
-//	public R list(@RequestParam Map<String, Object> params){
-//		//查询列表数据
-//		Query query = new Query(params);
-//
-//		List<PProductCategory> pProductList = pProductCategoryService.queryList(query);
-//		int total = pProductCategoryService.queryTotal(query);
-//
-//		PageUtils pageUtil = new PageUtils(pProductList, total, query.getLimit(), query.getPage());
-//
-//		return R.ok().put("page", pageUtil);
-//	}
-
 
     /**
      * 列表
      */
-    @GetMapping("/list")
-    @RequiresPermissions("generator:pproduct:list")
+    @GetMapping
+    @RequiresPermissions("generator:pproductcategory:list")
     public R list(Page pageable) {
         Page<PProductCategory> page = pProductCategoryService.selectPage(pageable);
 
@@ -57,7 +40,7 @@ public class PProductCategoryController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
+    @GetMapping("/{id}")
     @RequiresPermissions("generator:pproductcategory:info")
     public R info(@PathVariable("id") Integer id) {
         PProductCategory pProductCategory = pProductCategoryService.selectById(id);
@@ -68,7 +51,7 @@ public class PProductCategoryController {
     /**
      * 保存
      */
-    @RequestMapping("/save")
+    @PostMapping
     @RequiresPermissions("generator:pproductcategory:save")
     public R save(@RequestBody PProductCategory pProductCategory) {
         pProductCategoryService.insert(pProductCategory);
@@ -79,7 +62,7 @@ public class PProductCategoryController {
     /**
      * 修改
      */
-    @RequestMapping("/update")
+    @PutMapping
     @RequiresPermissions("generator:pproductcategory:update")
     public R update(@RequestBody PProductCategory pProductCategory) {
         pProductCategoryService.updateById(pProductCategory);
@@ -91,7 +74,7 @@ public class PProductCategoryController {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
+    @DeleteMapping
     @RequiresPermissions("generator:pproductcategory:delete")
     public R delete(@RequestBody Integer[] ids) {
         pProductCategoryService.deleteBatchIds(Arrays.asList(ids));

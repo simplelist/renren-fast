@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + 'generator/pproductcategory/list',
+        url: baseURL + 'generator/pproductcategory',
         datatype: "json",
         colModel: [
             {label: 'id', name: 'id', index: 'id', width: 50, key: true},
@@ -69,10 +69,10 @@ var vm = new Vue({
             vm.getInfo(id)
         },
         saveOrUpdate: function (event) {
-            var url = vm.pProductCategory.id == null ? "generator/pproductcategory/save" : "generator/pproductcategory/update";
+            var methodName = vm.pProductCategory.id == null ? "POST" : "PUT";
             $.ajax({
-                type: "POST",
-                url: baseURL + url,
+                type: methodName,
+                url: baseURL + "generator/pproductcategory",
                 contentType: "application/json",
                 data: JSON.stringify(vm.pProductCategory),
                 success: function (r) {
@@ -94,8 +94,8 @@ var vm = new Vue({
 
             confirm('确定要删除选中的记录？', function () {
                 $.ajax({
-                    type: "POST",
-                    url: baseURL + "generator/pproductcategory/delete",
+                    type: "DELETE",
+                    url: baseURL + "generator/pproductcategory",
                     contentType: "application/json",
                     data: JSON.stringify(ids),
                     success: function (r) {
@@ -111,7 +111,7 @@ var vm = new Vue({
             });
         },
         getInfo: function (id) {
-            $.get(baseURL + "generator/pproductcategory/info/" + id, function (r) {
+            $.get(baseURL + "generator/pproductcategory/" + id, function (r) {
                 vm.pProductCategory = r.pProductCategory;
             });
         },

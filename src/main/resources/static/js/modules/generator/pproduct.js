@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + 'generator/pproduct/list',
+        url: baseURL + 'generator/pproduct',
         datatype: "json",
         colModel: [
             {label: 'id', name: 'id', index: 'id', width: 50, key: true},
@@ -78,10 +78,10 @@ var vm = new Vue({
             vm.getInfo(id)
         },
         saveOrUpdate: function (event) {
-            var url = vm.pProduct.id == null ? "generator/pproduct/save" : "generator/pproduct/update";
+            var methodName = vm.pProductCategory.id == null ? "POST" : "PUT";
             $.ajax({
-                type: "POST",
-                url: baseURL + url,
+                type: methodName,
+                url: baseURL + "generator/pproduct",
                 contentType: "application/json",
                 data: JSON.stringify(vm.pProduct),
                 success: function (r) {
@@ -103,8 +103,8 @@ var vm = new Vue({
 
             confirm('确定要删除选中的记录？', function () {
                 $.ajax({
-                    type: "POST",
-                    url: baseURL + "generator/pproduct/delete",
+                    type: "DELETE",
+                    url: baseURL + "generator/pproduct",
                     contentType: "application/json",
                     data: JSON.stringify(ids),
                     success: function (r) {
@@ -120,7 +120,7 @@ var vm = new Vue({
             });
         },
         getInfo: function (id) {
-            $.get(baseURL + "generator/pproduct/info/" + id, function (r) {
+            $.get(baseURL + "generator/pproduct/" + id, function (r) {
                 vm.pProduct = r.pProduct;
             });
         },

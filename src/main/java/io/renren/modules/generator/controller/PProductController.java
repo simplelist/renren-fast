@@ -1,7 +1,6 @@
 package io.renren.modules.generator.controller;
 
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.Query;
+import com.baomidou.mybatisplus.plugins.Page;
 import io.renren.common.utils.R;
 import io.renren.modules.generator.entity.PProduct;
 import io.renren.modules.generator.service.PProductService;
@@ -10,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 商品表
@@ -29,24 +26,19 @@ public class PProductController {
     /**
      * 列表
      */
-    @RequestMapping("/list")
+    @GetMapping("/list")
     @RequiresPermissions("generator:pproduct:list")
-    public R list(@RequestParam Map<String, Object> params) {
-        //查询列表数据
-        Query query = new Query(params);
+    public R list(Page pageable) {
+        Page<PProduct> page = pProductService.selectPage(pageable);
 
-        List<PProduct> pProductList = pProductService.queryList(query);
-        int total = pProductService.queryTotal(query);
-
-        PageUtils pageUtil = new PageUtils(pProductList, total, query.getLimit(), query.getPage());
-
-        return R.ok().put("page", pageUtil);
+        return R.ok().put("page", page);
     }
+
 
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
+    @GetMapping("/{id}")
     @RequiresPermissions("generator:pproduct:info")
     public R info(@PathVariable("id") Integer id) {
         PProduct pProduct = pProductService.selectById(id);
@@ -56,7 +48,7 @@ public class PProductController {
     /**
      * 保存
      */
-    @RequestMapping("/save")
+    @PostMapping("/save")
     @RequiresPermissions("generator:pproduct:save")
     public R save(@RequestBody PProduct pProduct) {
         pProductService.insert(pProduct);
@@ -66,7 +58,7 @@ public class PProductController {
     /**
      * 修改
      */
-    @RequestMapping("/update")
+    @PutMapping("/update")
     @RequiresPermissions("generator:pproduct:update")
     public R update(@RequestBody PProduct pProduct) {
         pProductService.updateById(pProduct);
@@ -76,7 +68,7 @@ public class PProductController {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
+    @DeleteMapping("/delete")
     @RequiresPermissions("generator:pproduct:delete")
     public R delete(@RequestBody Integer[] ids) {
         pProductService.deleteBatchIds(Arrays.asList(ids));

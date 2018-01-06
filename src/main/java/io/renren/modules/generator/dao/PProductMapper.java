@@ -12,6 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2018-01-05 14:18:42
  */
 @Mapper
-public interface PProductMapper extends BaseDao<PProduct>, BaseMapper<PProduct> {
+public interface PProductMapper extends BaseMapper<PProduct> {
 
 }
